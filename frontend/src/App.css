@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.dashboard {
   min-height: 100vh;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #f8fafc;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.dashboard-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1.25rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 640px) {
+  .dashboard-header-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.dashboard-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.dashboard-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+}
+
+.dashboard-subtitle {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+
+.cta-add-candidate {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 0.65rem 1.35rem;
+  border: none;
+  border-radius: 999px;
+  background: #fbbf24;
+  color: #422006;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cta-add-candidate:hover {
+  filter: brightness(1.05);
+}
+
+.cta-add-candidate:focus-visible {
+  outline: 3px solid #f8fafc;
+  outline-offset: 2px;
+}
+
+.dashboard-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.form-anchor {
+  scroll-margin-top: 1rem;
+}
+
+.form-section-wrap {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.form-section-title {
+  margin: 0;
+  padding: 1rem 1.25rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+@media (min-width: 640px) {
+  .form-section-title {
+    padding: 1.25rem 1.5rem 0;
   }
 }

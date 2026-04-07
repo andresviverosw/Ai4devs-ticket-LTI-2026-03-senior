@@ -1,12 +1,11 @@
-version: "3.1"
-
 services:
   db:
-    image: postgres
-    restart: always
+    image: postgres:16-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: D1ymf8wyQEGthFR1E9xhCq
       POSTGRES_USER: LTIdbUser
       POSTGRES_DB: LTIdb
     ports:
-      - 5432:5432
+      # Avoid collisions with local Postgres on 5432/5433 — pick a high host port.
+      - "55432:5432"
